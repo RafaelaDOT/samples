@@ -1,7 +1,7 @@
 /*
 
 Modelagem de um sistema de arquivos 
-Código original por André Rosa, Diego Oliveira e Vinícius Hax (2007)
+CÃ³digo original por AndrÃ© Rosa, Diego Oliveira e VinÃ­cius Hax (2007)
 
 I-Node  --  	100 bytes - nome
 		1 byte - arquivo ou diretorio (0 p/ diretorio e 1 / arquivo)
@@ -352,7 +352,7 @@ void listar_diretorio(){
 		}
 }
 
-int cria_inode(char* nome){
+int cria_inode(char* nome){ // cria um hd virtual
 	int bl_virtual = busca_bloco_inode();
 	int end_real = converte_bloco(bl_virtual);
 	int i,flag=0;
@@ -369,7 +369,7 @@ int cria_inode(char* nome){
 
 	altera_mapa(bl_virtual, OCUPADO);
 	muda_nome(bl_virtual, nome);
-	for(i=end_real+128;i<end_real+512;++i){
+	for(i=end_real+128;i<end_real+512;++i){ //testa o tamanho do hd
 		ea[i] = 0;
 	}
 
@@ -546,7 +546,7 @@ void delarquivopelobloco(int bl_logico){
 				if (end_direto != 0)
 					altera_mapa(end_direto, LIVRE); //Libera bloco de dados
 			}
-			altera_mapa(end_indireto, LIVRE); //Libera bloco de endereços
+			altera_mapa(end_indireto, LIVRE); //Libera bloco de endereÃ§os
 		}
 		
 	}
@@ -586,7 +586,7 @@ void deldirpelobloco(int bl_logico){
 					altera_mapa(end_direto, LIVRE); //Libera bloco de dados
 					}
 			}
-			altera_mapa(end_indireto, LIVRE); //Libera bloco de endereços
+			altera_mapa(end_indireto, LIVRE); //Libera bloco de endereÃ§os
 		}
 		
 	}
