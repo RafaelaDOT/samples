@@ -1,7 +1,7 @@
 /*
 
 Modelagem de um sistema de arquivos 
-Código original por André Rosa, Diego Oliveira e Vinícius Hax (2007)
+CÃ³digo original por AndrÃ© Rosa, Diego Oliveira e VinÃ­cius Hax (2007)
 
 I-Node  --  	100 bytes - nome
 		1 byte - arquivo ou diretorio (0 p/ diretorio e 1 / arquivo)
@@ -244,7 +244,7 @@ void mostra_nome (int end_logico){
 }
 
 void muda_tamanho (int end){
-	int end_real = converte_bloco(end);	
+	int end_real = converte_bloco(end);	// converte end em int
 }
 
 void muda_especie (int end, int da){
@@ -546,7 +546,7 @@ void delarquivopelobloco(int bl_logico){
 				if (end_direto != 0)
 					altera_mapa(end_direto, LIVRE); //Libera bloco de dados
 			}
-			altera_mapa(end_indireto, LIVRE); //Libera bloco de endereços
+			altera_mapa(end_indireto, LIVRE); //Libera bloco de endereÃ§os
 		}
 		
 	}
@@ -586,7 +586,7 @@ void deldirpelobloco(int bl_logico){
 					altera_mapa(end_direto, LIVRE); //Libera bloco de dados
 					}
 			}
-			altera_mapa(end_indireto, LIVRE); //Libera bloco de endereços
+			altera_mapa(end_indireto, LIVRE); //Libera bloco de endereÃ§os
 		}
 		
 	}
